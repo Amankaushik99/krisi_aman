@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // Clear cache and redirect
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) caches.delete(name);
+            });
+        }
+        // Redirect with timestamp to bypass cache
+        window.location.href = '/dashboard.html?t=' + Date.now();
+    </script>
+</head>
+<body>
+    <p>Loading fresh dashboard...</p>
+</body>
+</html>

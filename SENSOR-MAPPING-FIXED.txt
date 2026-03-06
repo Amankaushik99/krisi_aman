@@ -1,0 +1,63 @@
+╔════════════════════════════════════════════════════════╗
+║  SENSOR MAPPING - FIXED!                              ║
+╚════════════════════════════════════════════════════════╝
+
+✅ CORRECT MAPPING:
+
+Dashboard Card          Blynk Pin    Sensor Type
+─────────────────────────────────────────────────────────
+Air Quality Monitor  →  v6          MQ-135 (50 ppm)
+Temperature          →  v7          DHT22 (25-27°C)
+Humidity             →  v4          DHT22 (10-14%)
+Water Tank Level     →  v5          FC-28 (1-8)
+Soil Moisture        →  v3          Soil Sensor (100%)
+PM2.5 / PM10         →  None        Set to 0 (no sensor)
+
+─────────────────────────────────────────────────────────
+
+🚀 TO APPLY CHANGES:
+
+1. Stop old bridge (if running):
+   Press Ctrl+C
+
+2. Start updated bridge:
+   python3 blynk_bridge.py
+
+3. Refresh dashboard:
+   http://localhost:5001/dashboard.html
+
+─────────────────────────────────────────────────────────
+
+✅ WHAT'S FIXED:
+
+Before:
+❌ Air Quality showing humidity
+❌ Water Tank showing soil data
+❌ Humidity showing water tank
+❌ PM sensors showing fake data
+
+After:
+✅ Air Quality shows MQ-135 (v6)
+✅ Water Tank shows FC-28 (v5)
+✅ Humidity shows DHT22 (v4)
+✅ Temperature shows DHT22 (v7)
+✅ Soil shows soil sensor (v3)
+✅ PM sensors show 0 (you don't have them)
+
+─────────────────────────────────────────────────────────
+
+📊 EXPECTED VALUES:
+
+Temperature:    25-27°C
+Humidity:       10-14%
+Air Quality:    ~50 ppm
+Water Tank:     1-8
+Soil Moisture:  100%
+PM2.5:          0 (no sensor)
+PM10:           0 (no sensor)
+
+─────────────────────────────────────────────────────────
+
+✅ Status: FIXED AND READY!
+
+Restart bridge: python3 blynk_bridge.py
